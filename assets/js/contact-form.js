@@ -9,7 +9,7 @@ $(function() {
 	// Set up an event listener for the contact form.
 	$(form).submit(function(e) {
 		// Stop the browser from submitting the form.
-		// e.preventDefault();
+		e.preventDefault();
 
 		// Serialize the form data.
 		var formData = $(form).serialize();
@@ -27,12 +27,17 @@ $(function() {
 			$(formMessages).addClass('success');
 
 			// Set the message text.
-			$(formMessages).text(response);
+			$(formMessages).text("Thank you for your message");
 
 			// Clear the form.
 			$('#name').val('');
 			$('#email').val('');
 			$('#message').val('');
+
+			setTimeout(function(){
+				$(formMessages).text("");
+				$(formMessages).removeClass('success');
+			}, 2000)
 		})
 		.fail(function(data) {
 			// Make sure that the formMessages div has the 'error' class.
@@ -40,11 +45,7 @@ $(function() {
 			$(formMessages).addClass('error');
 
 			// Set the message text.
-			if (data.responseText !== '') {
-				$(formMessages).text(data.responseText);
-			} else {
-				$(formMessages).text('An error occured and your message could not be sent.');
-			}
+			$(formMessages).text('An error occured and your message could not be sent');
 		});
 
 	});
