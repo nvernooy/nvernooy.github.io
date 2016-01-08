@@ -32,7 +32,6 @@
 
 					<!-- Nav -->
 						<nav id="nav">
-
 							<ul>
 								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
 								<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
@@ -54,7 +53,7 @@
 										<span class="label">Skype chat</span></a>
 								</p></li>
 							<li><a href="https://github.com/nvernooy" class="icon fa-github"><span class="label">Github</span></a></li>
-							<li><a href="https://za.linkedin.com/in/nielvernooy" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://za.linkedin.com/in/nielvernooy" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
 						</ul>
 
 				</div>
@@ -101,7 +100,7 @@
 								<div class="4u 12u$(mobile)">
 									<article class="item">
 										<a href="https://github.com/nvernooy/Minesweeper.git" class="image fit">
-										<img src="images/minesweeper.png" alt="Minesweeper" /></a>
+										<img src="images/minesweeper.png" alt="Minesweeper" title="Minesweeper"/></a>
 										<header>
 											<h3>Minesweeper</h3>
 										</header>
@@ -110,7 +109,7 @@
 								<div class="4u 12u$(mobile)">
 									<article class="item">
 										<a href="https://github.com/nvernooy/CellularAutomata.git" class="image fit">
-										<img src="images/automata.png" alt="Cellular Automata" /></a>
+										<img src="images/automata.png" alt="Cellular Automata" title="CellularAutomata"/></a>
 										<header>
 											<h3>Cellular Automata</h3>
 										</header>
@@ -119,7 +118,7 @@
 								<div class="4u$ 12u$(mobile)">
 									<article class="item">
 										<a href="http://nvernooy.github.io/acute-select/" class="image fit">
-										<img src="images/acute-select.png" alt="Bootstrap Select Dropdown" /></a>
+										<img src="images/acute-select.png" alt="Bootstrap Select Dropdown" title="Bootstrap Select Dropdown"/></a>
 										<header>
 											<h3>Bootstrap Select Dropdown</h3>
 										</header>
@@ -166,16 +165,18 @@
 
 							<div id="form-messages"></div>
 
-							<form id="ajax-contact" name="contactform" method="post" action="send_form_email.php">
+							<form id="ajax-contact" name="contactform" method="post" action="#contact">
 								<div class="row">
 									<div class="6u 12u$(mobile)"><input type="text" id="name" name="name" placeholder="Your name" required/></div>
-									<div class="6u$ 12u$(mobile)"><input type="email" id="email" name="email" placeholder="Your email" required/></div>
+									<div class="6u$ 12u$(mobile)"><input type="email" id="email" name="_replyto" placeholder="Your email" required/></div>
 									<div class="12u$">
 										<textarea id="message" name="message" placeholder="Your message" required></textarea>
 									</div>
 									<div class="12u$">
 										<input type="submit" value="Send Message" />
 									</div>
+									<input type="hidden" name="_next" value="#contact" />
+									<input type="hidden" name="_subject" value="New home message"/>
 								</div>
 							</form>
 
@@ -183,6 +184,8 @@
 								Email: vernooy.n@gmail.com
 								<br>
 								Skype: niel.vernooy
+								<br>
+								LinkedIn: linkedin.com/in/nielvernooy
 							</p>
 
 						</div>

@@ -2,28 +2,26 @@ $(function() {
 
 	// Get the form.
 	var form = $('#ajax-contact');
-	console.log(form);
 
 	// Get the messages div.
 	var formMessages = $('#form-messages');
-	console.log(formMessages);
 
 	// Set up an event listener for the contact form.
 	$(form).submit(function(e) {
 		// Stop the browser from submitting the form.
-		e.preventDefault();
+		// e.preventDefault();
 
 		// Serialize the form data.
 		var formData = $(form).serialize();
 
 		// Submit the form using AJAX.
 		$.ajax({
-			type: 'POST',
-			url: $(form).attr('action'),
-			data: formData
+		    url: "http://formspree.io/vernooy.n@gmail.com",
+		    method: "POST",
+		    data: formData,
+		    dataType: "json"
 		})
 		.done(function(response) {
-			console.log("done");
 			// Make sure that the formMessages div has the 'success' class.
 			$(formMessages).removeClass('error');
 			$(formMessages).addClass('success');
@@ -37,12 +35,9 @@ $(function() {
 			$('#message').val('');
 		})
 		.fail(function(data) {
-			console.log("fail");
 			// Make sure that the formMessages div has the 'error' class.
 			$(formMessages).removeClass('success');
 			$(formMessages).addClass('error');
-
-			console.log(data.responseText);
 
 			// Set the message text.
 			if (data.responseText !== '') {
